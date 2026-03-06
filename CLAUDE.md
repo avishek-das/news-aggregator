@@ -141,7 +141,7 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 1.2 | First data — arXiv + HN live | ✅ Done | 2026-03-05 |
 | 1.3 | First UI — feed on screen | ✅ Done | 2026-03-05 |
 | 1.4 | Source expansion — all major sources | ✅ Done | 2026-03-05 |
-| 1.5 | Source management — full CRUD + health | Not started | — |
+| 1.5 | Source management — full CRUD + health | 🔄 In progress | — |
 | 1.6 | AI summarization — nightly batch | Not started | — |
 | 2.1 | Personalization — feedback + ranking | Not started | — |
 | 2.2 | Auth — Google OAuth via Supabase | Not started | — |
