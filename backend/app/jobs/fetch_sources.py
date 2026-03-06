@@ -16,7 +16,9 @@ async def run_fetch_job() -> None:
     for source in sources:
         adapter_name: str = source.fetch_config.get("adapter", "")
         try:
-            adapter = get_adapter(adapter_name, source.id, source.fetch_config)
+            # Merge source.url into fetch_config so adapters can read it
+            config_with_url = {**source.fetch_config, "url": source.url}
+            adapter = get_adapter(adapter_name, source.id, config_with_url)
             items = await adapter.fetch()
             count = upsert(items, str(source.id))
             record_success(str(source.id), count)
