@@ -141,7 +141,7 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 1.2 | First data — arXiv + HN live | ✅ Done | 2026-03-05 |
 | 1.3 | First UI — feed on screen | ✅ Done | 2026-03-05 |
 | 1.4 | Source expansion — all major sources | ✅ Done | 2026-03-05 |
-| 1.5 | Source management — full CRUD + health | 🔄 In progress | — |
+| 1.5 | Source management — full CRUD + health | ✅ Done | 2026-03-06 |
 | 1.6 | AI summarization — nightly batch | Not started | — |
 | 2.1 | Personalization — feedback + ranking | Not started | — |
 | 2.2 | Auth — Google OAuth via Supabase | Not started | — |
@@ -149,6 +149,31 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 2.4 | Production hardening | Not started | — |
 
 **Phase 2 does not start until Phase 1 is stable and in active personal use for several weeks.**
+
+### Phase 1.5 — What was built
+
+**Backend**
+- `backend/app/models/source.py` — rewritten: added `SourceType/Category/Priority/Status` Literals; `SourceResponse` (frozen); `SourceCreateRequest` with adapter allowlist validator; `SourceUpdateRequest` with `at_least_one_field` validator; `SourceSingleResponse`; `SourcesListResponse`
+- `backend/app/repositories/sources.py` — full CRUD added: `find_all`, `find_by_id`, `create`, `update` (auto-injects `updated_at`), `delete`, `has_items`; preserved `find_active`, `record_success`, `record_failure`
+- `backend/app/routers/sources.py` — 6 endpoints: `GET /sources`, `POST /sources` (201), `PATCH /sources/{id}`, `POST /sources/{id}/retire`, `POST /sources/{id}/reactivate`, `DELETE /sources/{id}` (204/404/409)
+- `backend/app/main.py` — sources router registered
+- `tests/unit/test_source_models.py` — 20 tests (Literal validation, frozen immutability, adapter validator)
+- `tests/unit/test_source_repository.py` — 14 new CRUD tests appended (find_all, find_by_id, create, update, delete, has_items)
+- `tests/unit/test_sources_router.py` — 30 endpoint tests (200/201/204/404/409/422 cases)
+- **196 unit tests, 94.84% coverage**
+
+**Frontend**
+- `frontend/src/types/source.ts` — `Source`, `SourceType/Category/Priority/Status`, `SourceCreatePayload`, `SourceUpdatePayload`
+- `frontend/src/lib/sources-api.ts` — `fetchSources`, `createSource`, `updateSource`, `retireSource`, `reactivateSource`, `deleteSource`
+- `frontend/src/hooks/use-sources.ts` — `useSources()` hook; optimistic local state updates (create/update/retire/reactivate/remove)
+- `frontend/src/components/SourcesTable.tsx` — table with status badges, priority colors, per-source Edit/Retire-or-Activate/Delete action buttons
+- `frontend/src/components/SourceForm.tsx` — create/edit form with all fields + optional adapter; error display; loading state
+- `frontend/app/sources/page.tsx` — admin list page
+- `frontend/app/sources/new/page.tsx` — create page
+- `frontend/app/sources/[id]/edit/page.tsx` — edit page
+- `frontend/app/page.tsx` — added "Sources" nav link in header
+- `frontend/package.json` — added `test`, `test:watch`, `test:coverage` scripts
+- **77 frontend tests, all passing**
 
 ### Phase 1.4 — What was built (commit `51e0486`)
 
