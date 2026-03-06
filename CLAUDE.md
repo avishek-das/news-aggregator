@@ -140,7 +140,7 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 1.1 | Foundation — scaffold, CI, DB schema | ✅ Done | 2026-03-05 |
 | 1.2 | First data — arXiv + HN live | ✅ Done | 2026-03-05 |
 | 1.3 | First UI — feed on screen | ✅ Done | 2026-03-05 |
-| 1.4 | Source expansion — all major sources | Not started | — |
+| 1.4 | Source expansion — all major sources | 🔄 In progress | — |
 | 1.5 | Source management — full CRUD + health | Not started | — |
 | 1.6 | AI summarization — nightly batch | Not started | — |
 | 2.1 | Personalization — feedback + ranking | Not started | — |
