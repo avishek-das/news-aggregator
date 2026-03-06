@@ -139,7 +139,7 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 |-----------|------|--------|-----------|
 | 1.1 | Foundation — scaffold, CI, DB schema | ✅ Done | 2026-03-05 |
 | 1.2 | First data — arXiv + HN live | ✅ Done | 2026-03-05 |
-| 1.3 | First UI — feed on screen | 🔄 In progress | — |
+| 1.3 | First UI — feed on screen | ✅ Done | 2026-03-05 |
 | 1.4 | Source expansion — all major sources | Not started | — |
 | 1.5 | Source management — full CRUD + health | Not started | — |
 | 1.6 | AI summarization — nightly batch | Not started | — |
@@ -149,6 +149,23 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 2.4 | Production hardening | Not started | — |
 
 **Phase 2 does not start until Phase 1 is stable and in active personal use for several weeks.**
+
+### Phase 1.3 — What was built (commit `3720bc5`)
+
+- `frontend/src/types/item.ts` — `FeedItem`, `Meta`, `ItemsListResponse`, `Category` types
+- `frontend/src/lib/constants.ts` — `API_BASE_URL`, `CATEGORIES`, `DEFAULT_LIMIT`
+- `frontend/src/lib/time-ago.ts` — pure relative time formatter (testable via `now` param)
+- `frontend/src/lib/api.ts` — `fetchItems` + `markRead` with `credentials: 'include'`
+- `frontend/src/hooks/use-items.ts` — fetch, paginate, filter, mark-read; abort on category change; `hasMore` via `meta.total`
+- `frontend/src/hooks/use-intersection.ts` — `IntersectionObserver` hook for infinite scroll
+- `frontend/src/components/SkeletonCard.tsx` — animated pulse loading placeholder
+- `frontend/src/components/CategoryTabs.tsx` — All | Research | Code | Community | Product | Media tabs
+- `frontend/src/components/ItemCard.tsx` — title link, excerpt, badges, relative time, mark-read on click
+- `frontend/src/components/FeedList.tsx` — orchestrates full feed: tabs, states, cards, infinite scroll sentinel
+- `frontend/app/page.tsx` — sticky header + FeedList
+- `frontend/tsconfig.json` — paths updated: `@/*` → `["./src/*", "./*"]`
+- 48 unit tests, 95.83% statement / 98.01% line coverage
+- `next build` → static export passes
 
 ### Phase 1.2 — What was built (commit `19854ac`)
 
