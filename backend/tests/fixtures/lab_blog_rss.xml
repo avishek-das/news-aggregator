@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>OpenAI Blog</title>
+    <link>https://openai.com/blog</link>
+    <description>OpenAI research and announcements</description>
+    <item>
+      <title>GPT-5 Technical Report</title>
+      <link>https://openai.com/blog/gpt-5-technical-report</link>
+      <description>We present GPT-5, our latest and most capable language model.</description>
+      <pubDate>Wed, 04 Mar 2026 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scaling Laws for Neural Language Models</title>
+      <link>https://openai.com/blog/scaling-laws</link>
+      <description>Empirical scaling laws for language model performance on various tasks.</description>
+      <pubDate>Mon, 02 Mar 2026 10:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Lex Fridman Podcast</title>
+    <link>https://lexfridman.com/podcast</link>
+    <description>Conversations about AI, science, and the nature of intelligence.</description>
+    <item>
+      <title>#420 – Sam Altman: The Future of AI</title>
+      <link>https://lexfridman.com/sam-altman-4</link>
+      <description>Sam Altman discusses AGI timelines, safety, and what comes after GPT-5.</description>
+      <pubDate>Wed, 04 Mar 2026 12:00:00 +0000</pubDate>
+      <itunes:duration>3:42:15</itunes:duration>
+      <enclosure url="https://lexfridman.com/podcast/ep420.mp3" type="audio/mpeg" length="123456789"/>
+    </item>
+    <item>
+      <title>#419 – Andrej Karpathy: Neural Networks from Scratch</title>
+      <link>https://lexfridman.com/andrej-karpathy-3</link>
+      <description>Andrej walks through building neural networks from first principles.</description>
+      <pubDate>Mon, 02 Mar 2026 10:00:00 +0000</pubDate>
+      <itunes:duration>2:18:44</itunes:duration>
+      <enclosure url="https://lexfridman.com/podcast/ep419.mp3" type="audio/mpeg" length="987654321"/>
+    </item>
+  </channel>
+</rss>

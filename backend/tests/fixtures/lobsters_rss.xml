@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Lobsters: ai</title>
+    <link>https://lobste.rs/t/ai</link>
+    <description>Lobsters stories tagged ai</description>
+    <item>
+      <title>Understanding Attention in Transformers</title>
+      <link>https://lobste.rs/s/abc123/understanding-attention</link>
+      <description>A deep dive into attention mechanisms and why they work.</description>
+      <pubDate>Wed, 04 Mar 2026 11:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Running LLMs Locally</title>
+      <link>https://lobste.rs/s/def456/running-llms-locally</link>
+      <description>Guide to running large language models on consumer hardware.</description>
+      <pubDate>Wed, 04 Mar 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Understanding Attention in Transformers</title>
+      <link>https://lobste.rs/s/abc123/understanding-attention</link>
+      <description>Duplicate item — same URL as item 1.</description>
+      <pubDate>Wed, 04 Mar 2026 11:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

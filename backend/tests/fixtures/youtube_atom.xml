@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:yt="http://www.youtube.com/xml/schemas/2015"
+      xmlns:media="http://search.yahoo.com/mrss/">
+  <title>Two Minute Papers</title>
+  <id>yt:channel:UCbfYPyITQ-7l4upoX8nvctg</id>
+  <entry>
+    <id>yt:video:abc123xyz</id>
+    <yt:videoId>abc123xyz</yt:videoId>
+    <title>Amazing AI Paper Explained in 2 Minutes</title>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=abc123xyz"/>
+    <published>2026-03-04T10:00:00+00:00</published>
+    <media:group>
+      <media:description>We explain the latest breakthrough in AI research.</media:description>
+    </media:group>
+  </entry>
+  <entry>
+    <id>yt:video:def456uvw</id>
+    <yt:videoId>def456uvw</yt:videoId>
+    <title>GPT vs Claude: A Comparison</title>
+    <link rel="alternate" href="https://www.youtube.com/watch?v=def456uvw"/>
+    <published>2026-03-03T08:00:00+00:00</published>
+    <media:group>
+      <media:description>Side by side comparison of GPT and Claude on various benchmarks.</media:description>
+    </media:group>
+  </entry>
+</feed>

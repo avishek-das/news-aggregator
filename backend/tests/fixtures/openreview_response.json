@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "id": "AbCdEfGhIj",
+      "content": {
+        "title": {"value": "Attention Is All You Need (Revisited)"},
+        "abstract": {"value": "We revisit the original transformer architecture and propose several improvements based on recent advances in the field."},
+        "authors": {"value": ["Alice Researcher", "Bob Scientist"]}
+      }
+    },
+    {
+      "id": "KlMnOpQrSt",
+      "content": {
+        "title": {"value": "Scaling Language Models: Methods, Analysis and Insights"},
+        "authors": {"value": ["Charlie Author"]}
+      }
+    }
+  ]
+}

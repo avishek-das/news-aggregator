@@ -1,0 +1,26 @@
+[
+  {
+    "title": "FlashAttention-3: Fast and Accurate Attention",
+    "paper": {
+      "id": "2407.08608",
+      "summary": "We present FlashAttention-3, which achieves significant speedups over FlashAttention-2 by leveraging new hardware features.",
+      "authors": [
+        {"name": "Tri Dao"},
+        {"name": "Albert Gu"}
+      ]
+    },
+    "publishedAt": "2026-03-04T00:00:00.000Z"
+  },
+  {
+    "title": "Mixture of Experts at Scale",
+    "paper": {
+      "id": "2603.00002",
+      "summary": "We study scaling laws for mixture-of-experts language models and find that MoE models outperform dense models at equal compute.",
+      "authors": [
+        {"name": "Jane Smith"},
+        {"name": "John Doe"}
+      ]
+    },
+    "publishedAt": "2026-03-03T00:00:00.000Z"
+  }
+]

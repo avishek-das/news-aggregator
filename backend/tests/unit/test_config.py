@@ -30,8 +30,12 @@ def test_config_missing_database_url_raises() -> None:
     }
     with patch.dict(os.environ, env, clear=True):
         from app.config import Settings
+        from pydantic_settings import SettingsConfigDict
+        # Override env_file to prevent .env file from satisfying missing vars
+        class SettingsNoFile(Settings):
+            model_config = SettingsConfigDict(env_file=None, extra="ignore")
         with pytest.raises(ValidationError) as exc_info:
-            Settings()
+            SettingsNoFile()
         assert "DATABASE_URL" in str(exc_info.value)
 
 

@@ -1,0 +1,48 @@
+{
+  "data": {
+    "children": [
+      {
+        "data": {
+          "id": "post1",
+          "title": "New paper on efficient LLM inference",
+          "url": "https://arxiv.org/abs/2603.00001",
+          "permalink": "/r/MachineLearning/comments/post1/new_paper/",
+          "selftext": "",
+          "score": 500,
+          "num_comments": 42,
+          "created_utc": 1741089600,
+          "is_self": false,
+          "subreddit": "MachineLearning"
+        }
+      },
+      {
+        "data": {
+          "id": "post2",
+          "title": "Discussion: Running 70B models at home",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/post2/discussion/",
+          "permalink": "/r/MachineLearning/comments/post2/discussion/",
+          "selftext": "I have been experimenting with running large models on consumer GPUs and wanted to share my findings.",
+          "score": 200,
+          "num_comments": 88,
+          "created_utc": 1741003200,
+          "is_self": true,
+          "subreddit": "MachineLearning"
+        }
+      },
+      {
+        "data": {
+          "id": "post3",
+          "title": "Low score post that should be filtered",
+          "url": "https://example.com/low-score",
+          "permalink": "/r/MachineLearning/comments/post3/low/",
+          "selftext": "Not very interesting.",
+          "score": 3,
+          "num_comments": 0,
+          "created_utc": 1740916800,
+          "is_self": false,
+          "subreddit": "MachineLearning"
+        }
+      }
+    ]
+  }
+}

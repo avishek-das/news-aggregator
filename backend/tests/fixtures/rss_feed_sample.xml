@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Sample RSS Feed</title>
+    <link>https://example.com</link>
+    <description>A sample RSS feed</description>
+    <item>
+      <title>First RSS Item</title>
+      <link>https://example.com/item-1</link>
+      <description>This is the description of the first item with enough text to be useful.</description>
+      <pubDate>Wed, 04 Mar 2026 12:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Second RSS Item</title>
+      <link>https://example.com/item-2</link>
+      <description>Description of the second item.</description>
+      <pubDate>Tue, 03 Mar 2026 09:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Item Without Date</title>
+      <link>https://example.com/item-3</link>
+      <description>This item has no publication date.</description>
+    </item>
+  </channel>
+</rss>
