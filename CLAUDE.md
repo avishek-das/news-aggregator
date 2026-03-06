@@ -140,7 +140,7 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 1.1 | Foundation — scaffold, CI, DB schema | ✅ Done | 2026-03-05 |
 | 1.2 | First data — arXiv + HN live | ✅ Done | 2026-03-05 |
 | 1.3 | First UI — feed on screen | ✅ Done | 2026-03-05 |
-| 1.4 | Source expansion — all major sources | 🔄 In progress | — |
+| 1.4 | Source expansion — all major sources | ✅ Done | 2026-03-05 |
 | 1.5 | Source management — full CRUD + health | Not started | — |
 | 1.6 | AI summarization — nightly batch | Not started | — |
 | 2.1 | Personalization — feedback + ranking | Not started | — |
@@ -149,6 +149,24 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 2.4 | Production hardening | Not started | — |
 
 **Phase 2 does not start until Phase 1 is stable and in active personal use for several weeks.**
+
+### Phase 1.4 — What was built (commit `51e0486`)
+
+- `backend/app/adapters/rss_parser.py` — shared RSS 2.0 + Atom parser; no duplication across adapters
+- `backend/app/adapters/arxiv_extra.py` — cs.LG/CL/CV/stat.ML; inherits ArxivAdapter._parse()
+- `backend/app/adapters/papers_with_code.py` — RSS with follow_redirects
+- `backend/app/adapters/lobsters.py` — multi-tag RSS; URL deduplication across tags
+- `backend/app/adapters/lab_blogs.py` — multi-feed RSS; per-feed failure isolation
+- `backend/app/adapters/youtube.py` — YouTube Atom feeds; yt:/media: namespace handling
+- `backend/app/adapters/podcasts.py` — RSS + itunes:duration enrichment
+- `backend/app/adapters/reddit.py` — JSON API; min_score filter; User-Agent; 1s delay between subs
+- `backend/app/adapters/huggingface.py` — HF Daily Papers JSON API
+- `backend/app/adapters/openreview.py` — OpenReview v2 API; multi-venue
+- `backend/app/adapters/github_trending.py` — stdlib HTMLParser; safe empty return on unexpected HTML
+- 138 unit tests, 93.85% coverage
+- 13 new sources seeded to Supabase; live fetch verified
+- `supabase/migrations/002_tracked_researchers.sql` added
+- **Known issues**: Papers with Code RSS redirects to HF (source set to inactive); some lab blog URLs need updating
 
 ### Phase 1.3 — What was built (commit `3720bc5`)
 
