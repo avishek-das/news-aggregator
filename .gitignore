@@ -1,0 +1,59 @@
+# ── Node / Frontend ──────────────────────────────────────────
+node_modules/
+.next/
+out/
+dist/
+.npm
+*.tsbuildinfo
+.eslintcache
+
+# ── Python / Backend ─────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.Python
+build/
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.so
+
+# ── Environment / Secrets ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ── Terraform ────────────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.lock.hcl
+terraform.tfvars
+!terraform.tfvars.example
+
+# ── Testing / Coverage ───────────────────────────────────────
+coverage/
+*.lcov
+playwright-report/
+test-results/
+
+# ── Editor / OS ──────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+
+# ── Docker ───────────────────────────────────────────────────
+*.log

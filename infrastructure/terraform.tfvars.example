@@ -1,0 +1,8 @@
+aws_region   = "us-east-1"
+project_name = "news-aggregator"
+github_repo  = "avishek-das/news-aggregator"
+
+# Fill these before ECS deployment — run: aws ec2 describe-vpcs
+vpc_id             = "vpc-xxxxxxxxxxxxxxxxx"
+private_subnet_ids = ["subnet-xxxxxxxxxxxxxxxxx", "subnet-yyyyyyyyyyyyyyyyy"]
+public_subnet_ids  = ["subnet-zzzzzzzzzzzzzzzzz", "subnet-aaaaaaaaaaaaaaaaaa"]
