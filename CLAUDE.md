@@ -138,8 +138,8 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | Sub-phase | Goal | Status | Completed |
 |-----------|------|--------|-----------|
 | 1.1 | Foundation — scaffold, CI, DB schema | ✅ Done | 2026-03-05 |
-| 1.2 | First data — arXiv + HN live | 🔄 In progress | — |
-| 1.3 | First UI — feed on screen | Not started | — |
+| 1.2 | First data — arXiv + HN live | ✅ Done | 2026-03-05 |
+| 1.3 | First UI — feed on screen | 🔄 In progress | — |
 | 1.4 | Source expansion — all major sources | Not started | — |
 | 1.5 | Source management — full CRUD + health | Not started | — |
 | 1.6 | AI summarization — nightly batch | Not started | — |
@@ -149,6 +149,24 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 | 2.4 | Production hardening | Not started | — |
 
 **Phase 2 does not start until Phase 1 is stable and in active personal use for several weeks.**
+
+### Phase 1.2 — What was built (commit `19854ac`)
+
+- `backend/app/adapters/base.py` — `RawItem` frozen dataclass + `SourceAdapter` ABC
+- `backend/app/adapters/arxiv.py` — Atom XML parser; fetches cs.AI feed
+- `backend/app/adapters/hackernews.py` — Algolia HN API; filters by min_score
+- `backend/app/adapters/__init__.py` — `ADAPTER_REGISTRY` + `get_adapter()` factory
+- `backend/app/db/client.py` — lazy Supabase singleton (service key)
+- `backend/app/models/item.py` — `ItemResponse` + `ItemsListResponse` (frozen Pydantic)
+- `backend/app/models/source.py` — `Source` Pydantic model (frozen)
+- `backend/app/repositories/sources.py` — `find_active`, `record_success`, `record_failure` (auto-flag after 3 failures)
+- `backend/app/repositories/items.py` — `upsert` (on_conflict=url), `find_all` two-query merge
+- `backend/app/middleware/session.py` — UUID4 httpOnly cookie, 1-year, SameSite=Lax
+- `backend/app/routers/items.py` — `GET /items` (filter, paginate), `POST /items/{id}/read`
+- `backend/app/jobs/fetch_sources.py` — daily fetch job; runnable as `python -m app.jobs.fetch_sources`
+- 64 unit tests, 92.26% coverage
+- **Live integration verified**: 120 items in Supabase (50 arXiv cs.AI + 70 HN)
+- GitHub Trending source set to `inactive` until Phase 1.4 adapter is built
 
 ### Phase 1.1 — What was built (commit `a46684e`)
 
