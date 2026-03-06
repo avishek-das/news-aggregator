@@ -135,22 +135,35 @@ Each sub-phase produces something openable in a browser or verifiable in the DB.
 
 ## Phase Tracker
 
-Update Status as work progresses.
-
-| Sub-phase | Goal | Status |
-|-----------|------|--------|
-| 1.1 | Foundation — scaffold, CI, DB schema | Not started |
-| 1.2 | First data — arXiv + HN live | Not started |
-| 1.3 | First UI — feed on screen | Not started |
-| 1.4 | Source expansion — all major sources | Not started |
-| 1.5 | Source management — full CRUD + health | Not started |
-| 1.6 | AI summarization — nightly batch | Not started |
-| 2.1 | Personalization — feedback + ranking | Not started |
-| 2.2 | Auth — Google OAuth via Supabase | Not started |
-| 2.3 | Per-user data — isolated feeds + settings | Not started |
-| 2.4 | Production hardening | Not started |
+| Sub-phase | Goal | Status | Completed |
+|-----------|------|--------|-----------|
+| 1.1 | Foundation — scaffold, CI, DB schema | ✅ Done | 2026-03-05 |
+| 1.2 | First data — arXiv + HN live | 🔄 In progress | — |
+| 1.3 | First UI — feed on screen | Not started | — |
+| 1.4 | Source expansion — all major sources | Not started | — |
+| 1.5 | Source management — full CRUD + health | Not started | — |
+| 1.6 | AI summarization — nightly batch | Not started | — |
+| 2.1 | Personalization — feedback + ranking | Not started | — |
+| 2.2 | Auth — Google OAuth via Supabase | Not started | — |
+| 2.3 | Per-user data — isolated feeds + settings | Not started | — |
+| 2.4 | Production hardening | Not started | — |
 
 **Phase 2 does not start until Phase 1 is stable and in active personal use for several weeks.**
+
+### Phase 1.1 — What was built (commit `a46684e`)
+
+- Monorepo: `frontend/` (Next.js 14 static export) + `backend/` (FastAPI)
+- `backend/app/config.py` — pydantic-settings, fail-fast on missing vars
+- `backend/app/routers/health.py` — `GET /health`, ALB-ready
+- `backend/app/main.py` — CORS with `allow_credentials=True` + explicit origins
+- `backend/tests/` — 6 unit tests passing (config + health)
+- `frontend/__tests__/smoke.test.tsx` — 1 unit test passing
+- `supabase/migrations/001_initial_schema.sql` — applied to Supabase ✓
+- `supabase/seed.sql` — 3 test sources seeded ✓
+- `docker-compose.yml` — local dev (FastAPI + Postgres)
+- `.github/workflows/backend-ci.yml` + `frontend-ci.yml` — CI pipelines live
+- `infrastructure/` — Terraform: ECR, GitHub OIDC role, Secrets Manager definitions
+- `.env.example` — all keys documented
 
 ---
 

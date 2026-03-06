@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <entry>
+    <id>http://arxiv.org/abs/2401.00001v1</id>
+    <title>  Large Language Models: A Survey  </title>
+    <summary>We present a comprehensive survey of large language models. This paper covers architectures, training methods, and applications.</summary>
+    <published>2024-01-01T00:00:00Z</published>
+    <author><name>Jane Doe</name></author>
+    <author><name>John Smith</name></author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00002v1</id>
+    <title>Efficient Fine-tuning Methods</title>
+    <summary>This paper explores efficient methods for fine-tuning pre-trained models on downstream tasks.</summary>
+    <published>2024-01-02T00:00:00Z</published>
+    <author><name>Alice Johnson</name></author>
+  </entry>
+</feed>

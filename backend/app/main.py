@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.routers import health
+from app.routers import health, items
+from app.middleware.session import SessionMiddleware
 
 app = FastAPI(
     title="AI News Aggregator API",
@@ -19,4 +20,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# SessionMiddleware must be added AFTER CORSMiddleware (Starlette processes in reverse order)
+app.add_middleware(SessionMiddleware)
+
 app.include_router(health.router)
+app.include_router(items.router)
